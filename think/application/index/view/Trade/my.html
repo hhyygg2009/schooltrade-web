@@ -1,0 +1,192 @@
+
+<link rel="stylesheet" href="/static/css/user.css">
+<link rel="stylesheet" href="/static/css/header.css">
+<link rel="stylesheet" href="/static/css/zhanghu.css">
+<link rel="stylesheet" href="/static/css/goods-info.css">
+
+
+
+<script>
+    layui.use('element', function () {
+        var element = layui.element;
+        element.on('nav(demo)', function (elem) {
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+</script>
+
+<div class="layui-row">
+    <div class="left-side-zu">
+        <a href=""><img src="__UPLOAD__/{$user.avatar}" class="left-side-img" alt="" width="86px" ; height="86px" ;></a>
+        <div class="user-info">
+            <a href="" class="user-name" onclick="">{$user.username}</a>
+            <a href="">消息(<span id="msg"><pp>0</pp></span>)</a>
+        </div>
+        <br>
+        <br>
+        <div class="user-link">
+            <div class="user-limit-p">
+                <a href="" onclick="">
+                    <span class="user-limit-img"></span>
+                    <span class="user-limit-mb">{$user.phone}</span></a>
+            </div>
+            <div class="user-limit-d">
+                <a href="" onclick=""><span class="user-limit-email"></span></a>
+            </div>
+            <div class="user-limit-w">
+                <a href="" onclick=""><span class="user-limit-weixin"></span></a>
+            </div>
+            <div class="user-limit-q">
+                <a href="" onclick=""><span class="user-limit-qq"></span></a>
+            </div>
+            <div class="user-limit-b">
+                <a href="" onclick=""><span class="user-limit-weibo"></span></a>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+<div class="layui-row">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">最近发布信息</li>
+            <li>我浏览过的信息</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <!--                <div class="big-goods" >-->
+                <!--                    <p class="info">信息号：25312017722307</p>-->
+                <!--                    <div class="goods-info">-->
+                <!--                        <div class="goods-left">-->
+                <!--                            <img src="img/goods.jpg" alt="">-->
+                <!--                            <ul class="goods-ul">-->
+                <!--                                <li><h6>卡西欧 G-SHOCK电子表G5600A 200米 防水 太阳能电力</h6></li>-->
+                <!--                                <li><p>2016-05-27 23:43</p></li>-->
+                <!--                                <li>广州·二手市场·服装/鞋帽/精包</li>-->
+                <!--                            </ul>-->
+                <!--                        </div>-->
+                <!--                        <div class="goods-right">-->
+                <!--                            <ul>-->
+                <!--                                <li><a href="" class="c1">个人删除</a></li>-->
+                <!--                            </ul>-->
+                <!--                            <div class="goods-right-link">-->
+                <!--                                <ul>-->
+                <!--                                    <li><a href="">彻底删除</a></li>-->
+                <!--                                    <li><a href="">恢复</a></li>-->
+                <!--                                </ul>-->
+                <!--                            </div>-->
+                <!--                        </div>-->
+
+
+                <!--                    </div>-->
+                <!--                </div>-->
+
+
+                {volist name="items" id="item"}
+                <div class="big-goods">
+                    <p class="info">信息号：{$item.id}</p>
+                    <div class="goods-info">
+                        <div class="goods-left">
+                            <img src="__UPLOAD__/{$item.pic1}" alt="">
+                            <ul class="goods-ul">
+                                <li><a href="detail?id={$item.id}">{$item.name}</a></li>
+                                <li><p>{$item.category.name}</p></li>
+                                <li>{$item.createTime}</li>
+                            </ul>
+                        </div>
+                        <div class="goods-right">
+                            <ul>
+                                <li><a href="" class="c1">{$item.category.name}</a></li>
+                                <li><a href="" class="c1">{$item.state.name}</a></li>
+                            </ul>
+                            <div class="goods-right-link">
+                                <ul>
+                                    <li><a href="delete?id={$item.id}">彻底删除</a></li>
+                                    <li><a href="edit?id={$item.id}">修改</a></li>
+                                    <li><a href="on?id={$item.id}">上架/下架</a></li>
+<!--                                    <li><a href="">恢复</a></li>-->
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                {/volist}
+                <div class="layui-row">
+                    <div id="pager"></div>
+                </div>
+            </div>
+            <div class="layui-tab-item">
+                {volist name="recent" id="item"}
+                <div class="big-goods">
+                    <p class="info">信息号：{$item.id}</p>
+                    <div class="goods-info">
+                        <div class="goods-left">
+                            <img src="__UPLOAD__/{$item.pic1}" alt="">
+                            <ul class="goods-ul">
+                                <li><a href="detail?id={$item.id}">{$item.name}</a></li>
+                                <li><p>{$item.category.name}</p></li>
+                                <li>{$item.createTime}</li>
+                            </ul>
+                        </div>
+                        <div class="goods-right">
+                            <ul>
+                                <li><a href="" class="c1">{$item.category.name}</a></li>
+
+                            </ul>
+                            <div class="goods-right-link">
+                                <ul>
+<!--                                    <li><a href="delete?id={$item.id}">彻底删除</a></li>-->
+<!--                                    <li><a href="edit?id={$item.id}">修改</a></li>-->
+<!--                                    <li><a href="on?id={$item.id}">上架/下架</a></li>-->
+                                    <!--                                    <li><a href="">恢复</a></li>-->
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                {/volist}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    layui.use('element', function () {
+        var $ = layui.jquery
+            , element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+
+    })
+</script>
+
+
+<script>
+    layui.use(['laypage', 'layer'], function () {
+        var laypage = layui.laypage
+            , layer = layui.layer;
+
+        //调用分页
+        laypage.render({
+            elem: 'pager'
+            , count: '{$count}'
+            ,curr:'{$curr}'
+            , jump: function (obj,first) {
+                //模拟渲染
+                if(!first){
+                    window.location.href='my?page='+obj.curr
+                }
+
+            }
+        });
+
+    });
+</script>
+
+
+<!--</body>-->
+<!--</html>-->

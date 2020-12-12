@@ -1,11 +1,14 @@
 <?php
 namespace app\index\controller;
 
-class Index
+use think\Controller;
+
+class Index extends Controller
 {
     public function index()
     {
-        return view();
+//        return view();
+        $this->redirect("Trade/search");
     }
 
     public function hello($name = 'ThinkPHP5')

@@ -1,33 +1,33 @@
-<div class="layui-header layui-bg-red">
-    <ul class="layui-nav layui-layout-left" lay-filter="">
-        <li class="layui-nav-item layui-this"><a href="">首页</a></li>
-        <li class="layui-nav-item"><a href="">手机二手</a></li>
-        <li class="layui-nav-item"><a href="">书籍二手</a></li>
-        <li class="layui-nav-item"><a href="">发布闲置</a></li>
-        <li class="layui-nav-item"><a href="">我的闲置</a></li>
-        <li class="layui-nav-item"><input type="text" class="layui-input" style="width: 100px" placeholder="搜索"></li>
-        <li class="layui-nav-item"><button class="layui-btn layui-bg-red" style="border: 1px solid #FFF;">   search</button></li>
+
+
+<div class="layui-header layui-bg-red" >
+<!--        <li class="layui-nav-img"><img src="/static/img/logo.png" alt=""></li>-->
+    <ul class="layui-nav layui-layout-left  layui-bg-red" lay-filter="">
+        <li class="layui-nav-item layui-this"><a href="{:url('Trade/search')}">首页</a></li>
+<!--        <li class="layui-nav-item"><a href="{:url('Trade/search')}">手机二手</a></li>-->
+<!--        <li class="layui-nav-item"><a href="">书籍二手</a></li>-->
+        <li class="layui-nav-item"><a href="{:url('Trade/release')}">发布闲置</a></li>
+        <li class="layui-nav-item"><a href="{:url('Trade/my')}">我的闲置</a></li>
+<!--        <li class="layui-nav-item"><input type="text" class="layui-input" style="width: 100px" placeholder="搜索"></li>-->
+<!--        <li class="layui-nav-item"><button class="layui-btn layui-bg-red" style="border: 1px solid #FFF;">   search</button></li>-->
     </ul>
 
 
-
-
-
-    <ul class="layui-nav layui-layout-right layui-bg-red">
+    <ul class="layui-nav layui-layout-right layui-bg-red ">
         <li class="layui-nav-item">
-            <a href="">控制台<span class="layui-badge">9</span></a>
+            <a href="{:url('Trade/release')}">发布新闲置</a>
+<!--            <a href="{:url('Trade/release')}">发布新闲置<span class="layui-badge">9</span></a>-->
         </li>
         <li class="layui-nav-item">
-            <a href="">个人中心<span class="layui-badge-dot"></span></a>
+            <a href="{:url('Trade/my')}">个人中心<span class="layui-badge-dot"></span></a>
         </li>
         <li class="layui-nav-item">
-            <a href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img">我</a>
+            <a href="{:url('passport/myprofile')}"><img src="__UPLOAD__/up/touxiang_default.png" class="layui-nav-img">我</a>
             <dl class="layui-nav-child">
-                <dd><a href="javascript:;">修改信息</a></dd>
-                <dd><a href="javascript:;">安全管理</a></dd>
-                <dd><a href="javascript:;">退出</a></dd>
+                <dd><a href="{:url('passport/myprofile')}">修改信息</a></dd>
+                <dd><a href="{:url('passport/myprofile')}">安全管理</a></dd>
+                <dd><a href="{:url('passport/logout')}">退出</a></dd>
             </dl>
         </li>
     </ul>
-
 </div>

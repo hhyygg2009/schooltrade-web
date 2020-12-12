@@ -18,7 +18,8 @@ return [
         '__PUBLIC__' =>'/',
         '__ROOT__'=>'/',
         '__UPIMG__'=>'/',
-        '__STATIC__'=>'/'
+        '__STATIC__'=>'/',
+        '__UPLOADS__'=>'/uploads'
 
     ],
     //'paginate'=>[

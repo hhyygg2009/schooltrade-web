@@ -28,7 +28,7 @@
 .search{
 	margin-top: 30px;
 	width: 800px;
-	background-color: aquamarine;
+
 }
 .search form input{
 	float: left;
@@ -44,8 +44,7 @@
 .shelves{
 	margin: 30px auto;
 	clear: both;
-	width: 1140px;
-	height: 1600px;
+
 }
 .shelves .goods{
 	margin: 10px;
@@ -64,11 +63,11 @@
 	border: solid 1px red;
 }
 .shelves .goods .item{
-	padding: 20px;
+	margin: 20px;
 }
 .shelves .goods .item .goodstu{
-	width: 220px;
-	height: 220px;
+	width: 200px;
+	height: 200px;
 }
 .shelves .goods .item .user{
 	margin-bottom: 5px;

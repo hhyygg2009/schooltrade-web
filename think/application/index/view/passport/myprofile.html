@@ -1,0 +1,116 @@
+
+<h3>个人资料</h3>
+<div class="layui-row">
+    <div class="layui-col-md3">
+        <img src="__UPLOAD__/{$user.avatar}" alt="" style="height: 150px">
+    </div>
+    <div class="layui-col-md9">
+        <h3>个人资料</h3>
+        <table class="layui-table">
+            <tr>
+                <td>注册时间</td>
+                <td>{$user.regtime}</td>
+            </tr>
+            <tr>
+                <td>昵称</td>
+                <td>{$user.username}</td>
+            </tr>
+            <tr>
+                <td>手机</td>
+                <td>{$user.phone}</td>
+            </tr>
+
+        </table>
+
+    </div>
+    <div class="layui-row">
+    <div class="layui-col-md9">
+
+        <h1>修改信息</h1>
+<!--<div class="layui-tab">-->
+<!--    <ul class="layui-tab-title">-->
+<!--        <li class="layui-this">修改个人资料</li>-->
+<!--        <li>修改密码</li>-->
+<!--    </ul>-->
+
+<!--    <div class="layui-tab-content">-->
+<!--        <div class="layui-tab-item layui-show">-->
+
+<!--        </div>-->
+<!--        <div class="layui-tab-item">-->
+
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+        <form action="" method="post" class="layui-form">
+        <h3>修改个人资料</h3>
+        <table class="layui-table">
+            <tr>
+                <td>昵称</td>
+                <td><input type="text" name="username" value="{$user.username}" class="layui-input"></td>
+            </tr>
+            <tr>
+                <td>手机</td>
+                <td><input type="text" name="phone" value="{$user.phone}" class="layui-input"></td>
+            </tr>
+            <tr>
+                <td>保存</td>
+                <td><input type="submit" value="保存" class="layui-btn"></td>
+            </tr>
+
+        </table>
+        </form>
+    </div>
+    </div>
+
+    <div class="layui-row">
+        <div class="layui-col-md9">
+            <h3>密码设置</h3>
+            <form action="" method="post" class="layui-form">
+                <table class="layui-table">
+                    <tr>
+                        <td>用户名</td>
+                        <td>{$user.username}</td>
+                    </tr>
+                    <tr>
+                        <td>旧密码</td>
+                        <td><input type="text"  placeholder="请输入旧密码" name="oldpassword" class="layui-input"></td>
+                    </tr>
+                    <tr>
+                        <td>新密码</td>
+                        <td><input type="text" placeholder="6-16个字符" name="password" class="layui-input"></td>
+                    </tr>
+                    <tr>
+                        <td>确认密码</td>
+                        <td><input type="text" placeholder="请再次输入密码" name="rpassword" class="layui-input"></td>
+                    </tr>
+
+                </table>
+                <input type="submit" value="完成修改" class="layui-btn">
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+<script>
+    //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function(){
+        var element = layui.element;
+
+        //…
+    });
+</script>
+
+
+
+<script>
+    //Demo
+    layui.use('form', function(){
+        var form = layui.form;
+
+
+    });
+</script>
