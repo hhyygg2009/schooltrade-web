@@ -22,7 +22,7 @@ public class testmybastisuser {
         SqlSessionFactory sqlSessionFactory = getSqlSessionFactory();
         SqlSession sqlSession = sqlSessionFactory.openSession();
 
-        IUserDao IUserDao =sqlSession.getMapper(IUserDao.class);
+        IUserDao IUserDao = sqlSession.getMapper(IUserDao.class);
         System.out.println(IUserDao.selectByUsername("admin").toString());
 
 

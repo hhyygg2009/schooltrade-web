@@ -1,9 +1,10 @@
-.header-guide{
+.header-guide {
     background: #ff552e;
     width: 1520px;
     height: 80px;
 }
-.header-guide .header{
+
+.header-guide .header {
     width: 1036px;
     height: 80px;
     margin-left: auto;
@@ -12,12 +13,14 @@
     position: relative;
     z-index: 3;
 }
-.header-guide .header img{
+
+.header-guide .header img {
     cursor: pointer;
     float: left;
     margin-top: -16px;
     margin-right: 18px;
 }
+
 .header-guide .header .header-ul {
     float: left;
     position: relative;
@@ -25,24 +28,28 @@
     font-size: 16px;
     /*margin: 0;*/
     height: 100%;
-    margin-left:8px;
+    margin-left: 8px;
     z-index: 3;
 }
-.header-guide .header .header-ul li{
+
+.header-guide .header .header-ul li {
     float: left;
     margin-left: 10px;
     margin-right: 14px;
     margin-top: -6px;
 }
-.header-guide .header .header-ul li a{
+
+.header-guide .header .header-ul li a {
     color: #ffffff;
 }
-.header-guide .header .header-ul .header-li{
+
+.header-guide .header .header-ul .header-li {
     font-size: 18px;
     margin-right: 19px;
     font-weight: 700;
 }
-.header-guide .header .searchbar{
+
+.header-guide .header .searchbar {
     position: absolute;
     top: 26px;
     left: 670px;
@@ -50,7 +57,8 @@
     height: 30px;
     z-index: 3;
 }
-.header-guide .header .searchbar input{
+
+.header-guide .header .searchbar input {
     width: 165px;
     height: 30px;
     line-height: 30px;
@@ -63,7 +71,8 @@
     border-bottom-left-radius: 3px;
     font-size: 14px;
 }
-.header-guide .header .searchbar .header-input-search-bt{
+
+.header-guide .header .searchbar .header-input-search-bt {
     position: absolute;
     right: 140px;
     border: 1px solid #fff;
@@ -79,7 +88,8 @@
     border-bottom-right-radius: 3px;
     cursor: pointer;
 }
-.header-guide .header .searchbar .header-bt{
+
+.header-guide .header .searchbar .header-bt {
     color: #fff;
     font-size: 14px;
     width: 90px;

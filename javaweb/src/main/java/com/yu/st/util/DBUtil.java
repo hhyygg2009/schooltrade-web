@@ -9,24 +9,24 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class DBUtil {
-        private static final String resource = "mybatis-config.xml";
-        private static SqlSessionFactory sqlSessionFactory;
+    private static final String resource = "mybatis-config.xml";
+    private static SqlSessionFactory sqlSessionFactory;
 
-        static {
-            try {
-                getSqlSessionFactory();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+    static {
+        try {
+            getSqlSessionFactory();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+    }
 
     public static void getSqlSessionFactory() throws IOException {
         InputStream inputStream = Resources.getResourceAsStream(resource);
-         sqlSessionFactory=new SqlSessionFactoryBuilder().build(inputStream);
+        sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
     }
 
-    public static SqlSession getSession(){
-            return sqlSessionFactory.openSession();
+    public static SqlSession getSession() {
+        return sqlSessionFactory.openSession();
     }
 
 }

@@ -28,9 +28,9 @@ public class RegisterServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String username, password, phone, sex,code;
+        String username, password, phone, sex, code;
 
-        code=request.getParameter("captcha");
+        code = request.getParameter("captcha");
 
         username = request.getParameter("username");
         password = request.getParameter("password");
@@ -39,31 +39,31 @@ public class RegisterServlet extends HttpServlet {
 
         int status;
         Message message = new Message();
-        HttpSession session=request.getSession();
+        HttpSession session = request.getSession();
 
         //验证码验证
-        if(code!=null&&code.equals(session.getAttribute("code"))){
-        if (username != null) {
-            User user = new User();
-            user.setUsername(username);
-            password= MD5.generateCode(password);
-            user.setPassword(password);
-            user.setPhone(phone);
-            user.setSex(Integer.parseInt(sex));
+        if (code != null && code.equals(session.getAttribute("code"))) {
+            if (username != null) {
+                User user = new User();
+                user.setUsername(username);
+                password = MD5.generateCode(password);
+                user.setPassword(password);
+                user.setPhone(phone);
+                user.setSex(Integer.parseInt(sex));
 
-            UserService userService = new UserService();
-            try {
-                status = userService.register(user);
-                if (status == 1) {
-                    message.setMsg("注册成功");
+                UserService userService = new UserService();
+                try {
+                    status = userService.register(user);
+                    if (status == 1) {
+                        message.setMsg("注册成功");
+                    }
+                    message.setCode(status);
+                } catch (RuntimeException e) {
+                    e.printStackTrace();
                 }
-                message.setCode(status);
-            } catch (RuntimeException e) {
-                e.printStackTrace();
-            }
 
-        }
-        }else {
+            }
+        } else {
             message.setMsg("验证码错误");
 
         }

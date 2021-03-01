@@ -13,8 +13,8 @@ import org.apache.ibatis.session.SqlSession;
 import java.util.List;
 
 /**
- * @author        :hhyygg2009
- * @date        :Created in 2020/12/22 15:08
+ * @author :hhyygg2009
+ * @date :Created in 2020/12/22 15:08
  * @package :com.yu.st.dao
  * @description:
  * @modified By：
@@ -28,9 +28,9 @@ public class itemInfo {
     private static StateDao state;
 
     static {
-        sqlSession= DBUtil.getSession();
-        iItemDao= sqlSession.getMapper(iItemDao.class);
-        category= sqlSession.getMapper(CategoryDao.class);
+        sqlSession = DBUtil.getSession();
+        iItemDao = sqlSession.getMapper(iItemDao.class);
+        category = sqlSession.getMapper(CategoryDao.class);
         conditions = sqlSession.getMapper(ConditionsDao.class);
         state = sqlSession.getMapper(StateDao.class);
     }
@@ -39,11 +39,11 @@ public class itemInfo {
         return category.selectAll();
     }
 
-    public static List<State> getAllState(){
+    public static List<State> getAllState() {
         return state.selectAll();
     }
 
-    public static List<Conditions> getAllConditions(){
+    public static List<Conditions> getAllConditions() {
         return conditions.selectAll();
     }
 }

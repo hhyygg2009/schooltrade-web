@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    String id=request.getParameter("id");
+    String id = request.getParameter("id");
 
 %>
 <!DOCTYPE html>
@@ -74,7 +74,8 @@
                         <!--						</script>-->
                         <!--						&lt;!&ndash; 实例化编辑器 &ndash;&gt;-->
 
-                        <textarea id="container" lay-verify="textarea" name="info" style="display: none;">${item.info}</textarea>
+                        <textarea id="container" lay-verify="textarea" name="info"
+                                  style="display: none;">${item.info}</textarea>
                     </div>
                 </div>
 
@@ -86,7 +87,6 @@
                         <div class="layui-upload-list" id="demo2"></div>
                     </blockquote>
                 </div>
-
 
 
                 <div class="layui-form-item">
@@ -111,29 +111,32 @@
 </body>
 
 
-
 </html>
 
-<!--	</body>-->
+<!-- </body>-->
 <style>
-    .layui-upload-img{
-        height: 50px;width: 50px;padding-right: 50px
+    .layui-upload-img {
+        height: 50px;
+        width: 50px;
+        padding-right: 50px
     }
 </style>
 <script>
-    id=null;
+    id = null;
     <%if(id!=null){out.print("id="+id+";");}%>
 </script>
 <script src="<%=request.getContextPath()%>/static/js/trade/release.js"></script>
 <script>
-    <c:if test="${not empty item.pic1}">addpic('${item.pic1}')</c:if>
-    <c:if test="${not empty item.pic2}">addpic('${item.pic2}')</c:if>
-    <c:if test="${not empty item.pic3}">addpic('${item.pic3}')</c:if>
+    <c:if test="${not empty item.pic1}">addpic('${item.pic1}')
+    </c:if>
+    <c:if test="${not empty item.pic2}">addpic('${item.pic2}')
+    </c:if>
+    <c:if test="${not empty item.pic3}">addpic('${item.pic3}')
+    </c:if>
 </script>
 
 
-
-<!--	<script type="text/javascript">-->
-<!--		var ue = UE.getEditor('container');-->
-<!--	</script>-->
+<!-- <script type="text/javascript">-->
+<!-- var ue = UE.getEditor('container');-->
+<!-- </script>-->
 <!--</html>-->

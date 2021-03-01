@@ -10,31 +10,30 @@ public class UserDao {
     private static IUserDao iUserDao;
 
     static {
-        sqlSession=DBUtil.getSession();
-        iUserDao =sqlSession.getMapper(IUserDao.class);
+        sqlSession = DBUtil.getSession();
+        iUserDao = sqlSession.getMapper(IUserDao.class);
     }
 
 
-    public static User getUser(int userId){
+    public static User getUser(int userId) {
         return iUserDao.selectByPrimaryKey(userId);
     }
-    public static User getUserInfo(int userId){
+
+    public static User getUserInfo(int userId) {
         return iUserDao.selectUserinfo(userId);
     }
 
-    public static int updateUser(User user){
+    public static int updateUser(User user) {
         return iUserDao.updateByPrimaryKeySelective(user);
     }
 
-    public static User getUser(User user){
+    public static User getUser(User user) {
         return iUserDao.selectByUsername(user.getUsername());
     }
 
-    public static int addUser(User user){
+    public static int addUser(User user) {
         return iUserDao.insertSelective(user);
     }
-
-
 
 
 }

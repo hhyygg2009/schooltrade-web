@@ -1,10 +1,10 @@
-function itemoper(oper,id){
+function itemoper(oper, id) {
     $.ajax({
         type: 'POST',
-        url: ''+webroot+'/trade/item',
+        url: '' + webroot + '/trade/item',
         dataType: 'json',
         async: true,
-        data: {"oper":oper,"id":id},
+        data: {"oper": oper, "id": id},
         success: function (data) {
             console.log(data);
             // console.log(data.data);
@@ -22,21 +22,21 @@ function itemoper(oper,id){
 var page
 getItemByUserId(1)
 
-function getItemByUserId(page){
-    data={"oper":"getbyuserid","curr":page}
+function getItemByUserId(page) {
+    data = {"oper": "getbyuserid", "curr": page}
     console.log(userid);
-    if(userid!=null){
-        data.push("userid",userid);
+    if (userid != null) {
+        data.push("userid", userid);
     }
     $.ajax({
         type: 'POST',
-        url: ''+webroot+'/trade/items',
+        url: '' + webroot + '/trade/items',
         dataType: 'json',
         async: true,
         data: data,
         success: function (resp) {
             console.log(resp);
-            $.each(resp.data.items,function (index,val) {
+            $.each(resp.data.items, function (index, val) {
                 console.log(val);
                 $("#items").append(gethtmlitem(val));
 
@@ -46,17 +46,17 @@ function getItemByUserId(page){
                     layui.layer.msg(resp.msg);
                 })
             }
-            layui.use('laypage', function(){
+            layui.use('laypage', function () {
                 var laypage = layui.laypage;
                 //执行一个laypage实例
                 laypage.render({
                     elem: 'pager' //注意，这里的 test1 是 ID，不用加 # 号
-                    ,count: resp.data.count //数据总数，从服务端得到
-                    ,curr:page
-                    ,jump:function (obj,first) {
+                    , count: resp.data.count //数据总数，从服务端得到
+                    , curr: page
+                    , jump: function (obj, first) {
                         // console.log(obj.curr)
                         // console.log(obj.limit)
-                        if(!first){
+                        if (!first) {
                             $("#items").empty();
                             getItemByUserId(obj.curr)
                         }

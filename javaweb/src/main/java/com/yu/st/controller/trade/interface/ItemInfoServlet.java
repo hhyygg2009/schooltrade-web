@@ -1,11 +1,7 @@
 package com.yu.st.controller.trade;
 
-import com.yu.st.entity.Message;
 import com.yu.st.dao.impl.itemInfo;
-import com.yu.st.entity.Category;
-import com.yu.st.entity.Conditions;
-import com.yu.st.entity.Item;
-import com.yu.st.entity.State;
+import com.yu.st.entity.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,8 +12,8 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * @author        :hhyygg2009
- * @date        :Created in 2020/12/22 15:04
+ * @author :hhyygg2009
+ * @date :Created in 2020/12/22 15:04
  * @package :${PACKAGE_NAME}
  * @description:
  * @modified By：
@@ -26,7 +22,7 @@ import java.util.List;
 @WebServlet("/trade/iteminfo")
 public class ItemInfoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request,response);
+        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -46,15 +42,15 @@ public class ItemInfoServlet extends HttpServlet {
 //            request.setAttribute("item", item);
 //        }
 
-        Message message=new Message();
+        Message message = new Message();
 
         category = itemInfo.getAllCategory();
-        conditions =  itemInfo.getAllConditions();
+        conditions = itemInfo.getAllConditions();
         state = itemInfo.getAllState();
 
-        message.addData("category",category);
-        message.addData("conditions",conditions);
-        message.addData("state",state);
+        message.addData("category", category);
+        message.addData("conditions", conditions);
+        message.addData("state", state);
         message.setnoerror();
 
         response.getWriter().println(message);

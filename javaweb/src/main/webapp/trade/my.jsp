@@ -28,7 +28,8 @@
     <div class="layui-main" style="">
         <div class="layui-row">
             <div class="left-side-zu">
-                <a href=""><img src="<%=upload%>/${user.avatar}" class="left-side-img" alt="" width="86px" ; height="86px" ;></a>
+                <a href=""><img src="<%=upload%>/${user.avatar}" class="left-side-img" alt="" width="86px" ;
+                                height="86px" ;></a>
                 <div class="user-info">
                     <a href="" class="user-name" onclick="">${user.username}</a>
                     <a href="">消息(<span id="msg"><pp>0</pp></span>)</a>
@@ -64,10 +65,10 @@
             <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
                 <ul class="layui-tab-title">
                     <li class="layui-this">最近发布信息</li>
-<%--                    <li>我浏览过的信息</li>--%>
+                    <%--                    <li>我浏览过的信息</li>--%>
                 </ul>
                 <div class="layui-tab-content">
-                    <div class="layui-tab-item layui-show" >
+                    <div class="layui-tab-item layui-show">
                         <div id="items"></div>
                         <div class="layui-row">
                             <div id="pager"></div>
@@ -91,16 +92,13 @@
 
         <script>
 
-            userid=<%=request.getParameter("userid")%>;
+            userid =<%=request.getParameter("userid")%>;
         </script>
 
 
         <script src="<%=request.getContextPath()%>/static/js/trade/my.js">
 
         </script>
-
-
-
 
 
     </div>

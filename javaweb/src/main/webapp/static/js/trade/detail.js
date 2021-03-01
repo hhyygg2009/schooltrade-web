@@ -5,7 +5,7 @@ layui.use('element', function () {
     //…
 });
 
-function getmessage(data){
+function getmessage(data) {
     return `
 <h3>留言内容</h3>
 <div>
@@ -20,13 +20,13 @@ function getmessage(data){
 $("#messagebroad").append(getmessage(null));
 $("#messagebroad").append(getmessage(null));
 
-layui.use('carousel', function(){
+layui.use('carousel', function () {
     var carousel = layui.carousel;
     //建造实例
     carousel.render({
         elem: '#carousel'
-        ,width: '100%' //设置容器宽度
-        ,arrow: 'always' //始终显示箭头
+        , width: '100%' //设置容器宽度
+        , arrow: 'always' //始终显示箭头
         //,anim: 'updown' //切换动画方式
     });
 });

@@ -1,20 +1,20 @@
 package com.yu.st.entity;
 
-import java.io.Serializable;
 import lombok.Data;
+
+import java.io.Serializable;
 
 /**
  * conditions
- * @author 
+ *
+ * @author
  */
 @Data
 public class Conditions implements Serializable {
+    private static final long serialVersionUID = 1L;
     private Integer id;
-
     /**
      * 新旧程度
      */
     private String name;
-
-    private static final long serialVersionUID = 1L;
 }

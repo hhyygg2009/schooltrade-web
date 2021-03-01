@@ -1,6 +1,6 @@
-function reloadcode(){
+function reloadcode() {
     console.log("111");
-    $("#code").attr("src",`${webroot}/passport/code.jsp?rnd=${Math.random()}`);
+    $("#code").attr("src", `${webroot}/passport/code.jsp?rnd=${Math.random()}`);
 }
 
 //一般直接写在一个js文件中

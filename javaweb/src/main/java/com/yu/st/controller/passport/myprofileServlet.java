@@ -1,4 +1,4 @@
-package com.yu.st.controller.trade;
+package com.yu.st.controller.passport;
 
 import com.yu.st.dao.impl.UserDao;
 import com.yu.st.entity.User;
@@ -21,7 +21,7 @@ import java.io.IOException;
  * @version:
  */
 @WebServlet("/passport/myprofile")
-public class myprofileServlet extends HttpServlet {
+public class MyprofileServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }

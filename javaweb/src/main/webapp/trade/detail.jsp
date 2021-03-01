@@ -40,10 +40,16 @@
             <div class="layui-row">
                 <div class="layui-col-md3">
                     <div class="layui-carousel" id="carousel">
-                        <div carousel-item >
-                            <c:if test="${not empty item.pic1}"><div><img src="<%=upload%>/${item.pic1}" alt=""></div></c:if>
-                            <c:if test="${not empty item.pic2}"><div><img src="<%=upload%>/${item.pic2}" alt=""></div></c:if>
-                            <c:if test="${not empty item.pic3}"><div><img src="<%=upload%>/${item.pic3}" alt=""></div></c:if>
+                        <div carousel-item>
+                            <c:if test="${not empty item.pic1}">
+                                <div><img src="<%=upload%>/${item.pic1}" alt=""></div>
+                            </c:if>
+                            <c:if test="${not empty item.pic2}">
+                                <div><img src="<%=upload%>/${item.pic2}" alt=""></div>
+                            </c:if>
+                            <c:if test="${not empty item.pic3}">
+                                <div><img src="<%=upload%>/${item.pic3}" alt=""></div>
+                            </c:if>
 
                         </div>
                     </div>
@@ -64,7 +70,7 @@
                             <td>${item.user.username}</td>
                         </tr>
                         <tr>
-                            <td >联系电话</td>
+                            <td>联系电话</td>
                             <td>${item.user.phone}</td>
                         </tr>
                     </table>
@@ -117,9 +123,15 @@
             <div class="layui-row">
                 <h1>图片展示</h1>
                 <div class="imgbox">
-                    <c:if test="${not empty item.pic1}"><div><img src="<%=upload%>/${item.pic1}" alt=""></div></c:if>
-                    <c:if test="${not empty item.pic2}"><div><img src="<%=upload%>/${item.pic2}" alt=""></div></c:if>
-                    <c:if test="${not empty item.pic3}"><div><img src="<%=upload%>/${item.pic3}" alt=""></div></c:if>
+                    <c:if test="${not empty item.pic1}">
+                        <div><img src="<%=upload%>/${item.pic1}" alt=""></div>
+                    </c:if>
+                    <c:if test="${not empty item.pic2}">
+                        <div><img src="<%=upload%>/${item.pic2}" alt=""></div>
+                    </c:if>
+                    <c:if test="${not empty item.pic3}">
+                        <div><img src="<%=upload%>/${item.pic3}" alt=""></div>
+                    </c:if>
                 </div>
 
             </div>
@@ -134,21 +146,22 @@
             <div class="layui-row">
                 <div id="messagebroad" style="margin-top: 50px;">
 
+                </div>
             </div>
-        </div>
 
+
+        </div>
+        <!--    {include file="public/footer" /}-->
+        <%--    <%@ include file="/public/footer.jsp" %>--%>
 
     </div>
-    <!--    {include file="public/footer" /}-->
-    <%--    <%@ include file="/public/footer.jsp" %>--%>
-
-</div>
 
 
 </body>
 <script>
-    var avatar=${item.user.avatar}
-    var username=${item.user.username};
+    var avatar =
+    ${item.user.avatar}
+    var username =${item.user.username};
 </script>
 <script src="<%=request.getContextPath()%>/static/js/trade/detail.js"></script>
 </html>

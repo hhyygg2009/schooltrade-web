@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username, password, code, msg;
-        int status=-1;
+        int status = -1;
 
         code = request.getParameter("captcha");
         username = request.getParameter("username");
@@ -47,14 +47,14 @@ public class LoginServlet extends HttpServlet {
             //用户名密码验证
             if (username != null && password != null) {
                 User loginuser = new User();
-                password= MD5.generateCode(password);
+                password = MD5.generateCode(password);
                 loginuser.setUsername(username);
                 loginuser.setPassword(password);
 
                 UserService userService = new UserService();
                 status = userService.login(loginuser);
 
-                if(status==0){
+                if (status == 0) {
                     //保存到session
                     Integer userid = userService.user.getId();
 
@@ -62,10 +62,10 @@ public class LoginServlet extends HttpServlet {
                 }
 
             } else {
-                status=3;
+                status = 3;
             }
         } else {
-            status=4;
+            status = 4;
         }
         message.setCode(status);
         message.setMsg(UserService.msg[status]);

@@ -9,8 +9,8 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
- * @author        :hhyygg2009
- * @date        :Created in 2020/12/23 21:29
+ * @author :hhyygg2009
+ * @date :Created in 2020/12/23 21:29
  * @package :${PACKAGE_NAME}
  * @description:
  * @modified By：
@@ -19,12 +19,12 @@ import java.io.IOException;
 @WebServlet("/passport/logout")
 public class LogoutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request,response);
+        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session=request.getSession();
+        HttpSession session = request.getSession();
         session.removeAttribute("userid");
-        response.sendRedirect(request.getContextPath()+"/trade/search.jsp");
+        response.sendRedirect(request.getContextPath() + "/trade/search.jsp");
     }
 }

@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%
-    String key=request.getParameter("key");
-    if(key!=null){
-        key=",'key':"+key;
+    String key = request.getParameter("key");
+    if (key != null) {
+        key = ",'key':" + key;
     }
 %>
 
@@ -29,7 +29,7 @@
     <div class="layui-main" style="">
         <div class="searchbar">
             <form method="get" action="<%=request.getContextPath() %>/trade/search.jsp">
-            <img id="logo" src="<%=request.getContextPath()%>/static/img/logo.png" alt="">
+                <img id="logo" src="<%=request.getContextPath()%>/static/img/logo.png" alt="">
                 <input type="text" name="key" id="search" value="" placeholder="搜   索" autocomplete="off"/>
                 <input type="submit" id="searchbtn" value="搜         索" class="searchbtn"/>
             </form>
@@ -42,7 +42,7 @@
 
 <link rel="stylesheet" href="<%=request.getContextPath()%>/static/css/search.css">
 <script>
-    var keyword="<%=request.getParameter("key")%>"
+    var keyword = "<%=request.getParameter("key")%>"
 </script>
 <script src="<%=request.getContextPath()%>/static/js/trade/search.js"></script>
 

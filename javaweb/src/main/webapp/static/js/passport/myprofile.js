@@ -1,19 +1,18 @@
-
 //upload的启用
-layui.use('upload', function() {
+layui.use('upload', function () {
     var $ = layui.jquery,
         upload = layui.upload;
 
     //多图片上传
-    var uploadInst =upload.render({
+    var uploadInst = upload.render({
         elem: '#test2',
         url: `${webroot}/trade/item/imgupload`, //改成您自己的上传接口
-        field:'image',
+        field: 'image',
         multiple: true,
         before: function (obj) {
             //预读本地文件示例，不支持ie8
             obj.preview(function (index, file, result) {
-                $('#headperview').prop("src",result)
+                $('#headperview').prop("src", result)
             });
         },
         done: function (res) {
@@ -25,10 +24,10 @@ layui.use('upload', function() {
             // console.log(res);
             // console.log(res.data);
 
-            let pic=res.data.picaddr;
-            var user={
+            let pic = res.data.picaddr;
+            var user = {
                 // id:${user.id},
-                avatar:pic
+                avatar: pic
             }
             insert(JSON.stringify(user))
 
@@ -43,7 +42,6 @@ layui.use('upload', function() {
         },
     });
 })
-
 
 
 function insert(data) {
@@ -69,9 +67,9 @@ function insert(data) {
 }
 
 //Demo
-layui.use('form', function(){
+layui.use('form', function () {
     var form = layui.form;
-    form.on('submit(*)',function (data) {
+    form.on('submit(*)', function (data) {
         console.log(data);
         console.log(JSON.stringify(data.field));
         insert(JSON.stringify(data.field));

@@ -1,16 +1,17 @@
 querypage(1);
-function querypage(currpage){
-    pageInfo={'curr':currpage,'keyword':keyword}
+
+function querypage(currpage) {
+    pageInfo = {'curr': currpage, 'keyword': keyword}
 
     $.ajax({
         type: 'POST',
-        url: webroot+'/trade/items',
+        url: webroot + '/trade/items',
         dataType: 'json',
         async: true,
         data: pageInfo,
         success: function (resp) {
             // console.log(data);
-            $.each(resp.data.items,function (index,val) {
+            $.each(resp.data.items, function (index, val) {
                 // console.log(val);
                 $("#items").append(gethtmlitem(val));
             })
@@ -44,8 +45,8 @@ function querypage(currpage){
 }
 
 
-function gethtmlitem(item){
-return  `
+function gethtmlitem(item) {
+    return `
 <a href="detail?id=${item.id}" class="goodsitem">
     <div class="goods">
         <div class="item">

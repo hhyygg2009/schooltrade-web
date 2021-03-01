@@ -23,7 +23,7 @@
         <h3>个人资料</h3>
         <div class="layui-row">
             <div class="layui-col-md9">
-                <img id="headperview"  src="<%=upload%>/${user.avatar}" alt="" style="height: 150px">
+                <img id="headperview" src="<%=upload%>/${user.avatar}" alt="" style="height: 150px">
                 <button class="layui-btn" id="test2">上传头像</button>
             </div>
         </div>
@@ -50,65 +50,65 @@
         </div>
 
 
+        <div class="layui-row">
+            <div class="layui-col-md9">
+                <h1>修改信息</h1>
+                <fieldset class="layui-elem-field">
+                    <legend>修改个人资料</legend>
+                    <div class="layui-field-box">
+                        <form action="" method="post" class="layui-form">
+                            <input type="text" name="id" value="${user.id}" hidden>
+                            <table class="layui-table">
+                                <tr>
+                                    <td>昵称</td>
+                                    <td><input type="text" name="username" value="${user.username}" class="layui-input">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>手机</td>
+                                    <td><input type="text" name="phone" value="${user.phone}" class="layui-input"></td>
+                                </tr>
+                            </table>
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                        </form>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
 
-
-            <div class="layui-row">
-                <div class="layui-col-md9">
-                    <h1>修改信息</h1>
-                    <fieldset class="layui-elem-field">
-                        <legend>修改个人资料</legend>
-                        <div class="layui-field-box">
-                            <form action="" method="post" class="layui-form">
-                                <input type="text" name="id" value="${user.id}" hidden>
-                                <table class="layui-table">
-                                    <tr>
-                                        <td>昵称</td>
-                                        <td><input type="text" name="username" value="${user.username}" class="layui-input"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>手机</td>
-                                        <td><input type="text" name="phone" value="${user.phone}" class="layui-input"></td>
-                                    </tr>
-                                </table>
-                                <button class="layui-btn" lay-submit  lay-filter="*">保存</button>
-                            </form>
-                        </div>
-                    </fieldset>
-                </div>
+        <div class="layui-row">
+            <div class="layui-col-md9">
+                <fieldset class="layui-elem-field">
+                    <legend>密码设置</legend>
+                    <div class="layui-field-box">
+                        <form action="" method="post" class="layui-form">
+                            <input type="text" name="id" value="${user.id}" hidden>
+                            <table class="layui-table">
+                                <tr>
+                                    <td>昵称</td>
+                                    <td><input type="text" name="username" value="${user.username}" class="layui-input">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>请输入原来的密码</td>
+                                    <td><input type="password" name="oldpassword" value="" class="layui-input"></td>
+                                </tr>
+                                <tr>
+                                    <td>请输入新密码</td>
+                                    <td><input type="password" name="password" value="" class="layui-input"></td>
+                                </tr>
+                                <tr>
+                                    <td>确认密码</td>
+                                    <td><input type="password" name="rpassword" value="" class="layui-input"></td>
+                                </tr>
+                            </table>
+                            <button class="layui-btn" lay-submit lay-filter="*">保存</button>
+                        </form>
+                    </div>
+                </fieldset>
             </div>
 
-            <div class="layui-row">
-                <div class="layui-col-md9">
-                    <fieldset class="layui-elem-field">
-                        <legend>密码设置</legend>
-                        <div class="layui-field-box">
-                            <form action="" method="post" class="layui-form">
-                                <input type="text" name="id" value="${user.id}" hidden>
-                                <table class="layui-table">
-                                    <tr>
-                                        <td>昵称</td>
-                                        <td><input type="text" name="username" value="${user.username}" class="layui-input"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>请输入原来的密码</td>
-                                        <td><input type="password" name="oldpassword" value="" class="layui-input"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>请输入新密码</td>
-                                        <td><input type="password" name="password" value="" class="layui-input"></td>
-                                    </tr>
-                                    <tr>
-                                        <td>确认密码</td>
-                                        <td><input type="password" name="rpassword" value="" class="layui-input"></td>
-                                    </tr>
-                                </table>
-                                <button class="layui-btn" lay-submit  lay-filter="*">保存</button>
-                            </form>
-                        </div>
-                    </fieldset>
-                </div>
-
-            </div>
+        </div>
 
     </div>
 </div>

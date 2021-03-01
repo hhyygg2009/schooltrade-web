@@ -15,7 +15,7 @@
 </head>
 
 <body>
-<%@ include file="/public/header.jsp"%>
+<%@ include file="/public/header.jsp" %>
 <div class="top-title"><span>登录</span></div>
 <div class="main">
 
@@ -23,7 +23,8 @@
         <div class="layui-form-item">
             <label class="layui-form-label">帐号</label>
             <div class="layui-input-block">
-                <p class="input-box"><input type="text" name="username" required lay-verify="required" placeholder="请输入登录"
+                <p class="input-box"><input type="text" name="username" required lay-verify="required"
+                                            placeholder="请输入登录"
                                             autocomplete="off" class="layui-input"></p>
             </div>
         </div>
@@ -38,7 +39,8 @@
             <label class="layui-form-label">验证码</label>
             <div class="layui-input-block">
                 <p class="input-box">
-                <p class="code-box"><input type="text" name="captcha" required lay-verify="required" placeholder="请输入验证码"
+                <p class="code-box"><input type="text" name="captcha" required lay-verify="required"
+                                           placeholder="请输入验证码"
                                            autocomplete="off" class="layui-input"></p>
                 <div>
                     <img id="code" onclick="reloadcode()" src="<%=request.getContextPath()%>/passport/code.jsp" alt="">

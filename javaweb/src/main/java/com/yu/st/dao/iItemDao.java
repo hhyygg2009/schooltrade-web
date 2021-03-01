@@ -15,14 +15,12 @@ public interface iItemDao {
     Item selectByPrimaryKey(Integer id);
 
 
-
-    List<Item> selectAllItem(@Param("start")Integer start,@Param("limit") Integer limit);
-
+    List<Item> selectAllItem(@Param("start") Integer start, @Param("limit") Integer limit);
 
 
-    List<Item> selectByKeyword(@Param("keyword") String keyword,@Param("start")Integer start,@Param("limit") Integer limit);
+    List<Item> selectByKeyword(@Param("keyword") String keyword, @Param("start") Integer start, @Param("limit") Integer limit);
 
-    List<Item> selectByUserId(@Param("id") Integer id,@Param("start")Integer start,@Param("limit") Integer limit);
+    List<Item> selectByUserId(@Param("id") Integer id, @Param("start") Integer start, @Param("limit") Integer limit);
 
     int updateByPrimaryKeySelective(Item record);
 

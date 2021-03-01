@@ -14,8 +14,8 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
- * @author        :hhyygg2009
- * @date        :Created in 2020/12/22 20:56
+ * @author :hhyygg2009
+ * @date :Created in 2020/12/22 20:56
  * @package :${PACKAGE_NAME}
  * @description:
  * @modified By：
@@ -24,24 +24,24 @@ import java.io.IOException;
 @WebServlet("/passport/user")
 public class UserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request,response);
+        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String userid,userstr;
+        String userid, userstr;
         Integer useridInt;
 
 
-        userid=request.getParameter("userid");
-        userstr=request.getParameter("user");
+        userid = request.getParameter("userid");
+        userstr = request.getParameter("user");
 
-        HttpSession session=request.getSession();
-        Message message=new Message();
+        HttpSession session = request.getSession();
+        Message message = new Message();
 
-        if(userid!=null){
-            useridInt=Integer.parseInt(userid);
-        }else{
-            useridInt=(Integer)session.getAttribute("userid");
+        if (userid != null) {
+            useridInt = Integer.parseInt(userid);
+        } else {
+            useridInt = (Integer) session.getAttribute("userid");
         }
 
 //        if(useridInt!=null){
@@ -50,9 +50,9 @@ public class UserServlet extends HttpServlet {
 //                message.setnoerror();
 //        }
 
-        User user=JSON.parseObject(userstr,User.class);
-        int status=UserDao.updateUser(user);
-        if (status==1){
+        User user = JSON.parseObject(userstr, User.class);
+        int status = UserDao.updateUser(user);
+        if (status == 1) {
             message.setnoerror();
         }
         response.getWriter().println(message);

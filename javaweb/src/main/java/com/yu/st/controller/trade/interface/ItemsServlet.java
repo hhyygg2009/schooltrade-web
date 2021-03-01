@@ -1,8 +1,8 @@
 package com.yu.st.controller.trade;
 
-import com.yu.st.entity.Message;
 import com.yu.st.dao.impl.ItemDao;
 import com.yu.st.entity.Item;
+import com.yu.st.entity.Message;
 import com.yu.st.service.impl.ItemService;
 
 import javax.servlet.ServletException;
@@ -60,11 +60,11 @@ public class ItemsServlet extends HttpServlet {
         ItemService itemService = new ItemService();
 
         //分页查询:物品总数
-        Integer count=null;
+        Integer count = null;
         List<Item> items = null;
 
-            count = ItemDao.selectAllCount();
-        if (keyword != null&&!keyword.equals("null")) {
+        count = ItemDao.selectAllCount();
+        if (keyword != null && !keyword.equals("null")) {
             items = ItemDao.selectByKeyword(keyword, startIndex, pageSize);
         } else if (useridStr != null) {
             items = ItemDao.selectByUserId(useridInt, startIndex, pageSize);
@@ -73,7 +73,7 @@ public class ItemsServlet extends HttpServlet {
 
         }
         if (items != null && !items.isEmpty()) {
-            if(count!=null){
+            if (count != null) {
                 message.addData("count", count);
             }
             message.addData("items", items);

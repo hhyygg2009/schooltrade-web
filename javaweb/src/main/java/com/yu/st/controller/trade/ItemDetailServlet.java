@@ -1,13 +1,16 @@
 package com.yu.st.controller.trade;
 
-import com.yu.st.entity.Message;
 import com.yu.st.entity.Item;
+import com.yu.st.entity.Message;
 import com.yu.st.service.impl.ItemService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
@@ -33,7 +36,7 @@ public class ItemDetailServlet extends HttpServlet {
         ItemService itemService = new ItemService();
 
 //        HttpSession session=request.getSession();
-        Cookie[] cookies= request.getCookies();
+        Cookie[] cookies = request.getCookies();
         if (id != null) {
 //            Cookie itemCookie=getCookie(cookies,"items");
 //            Cookie itemCookie=new Cookie("items", );
