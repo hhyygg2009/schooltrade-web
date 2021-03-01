@@ -1,6 +1,6 @@
 package com.yu.st.controller.trade;
 
-import com.yu.st.controller.Message;
+import com.yu.st.entity.Message;
 import com.yu.st.entity.Item;
 import com.yu.st.service.impl.ItemService;
 
@@ -9,8 +9,6 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
-import java.net.HttpCookie;
-import java.util.List;
 
 /**
  * @author :hhyygg2009

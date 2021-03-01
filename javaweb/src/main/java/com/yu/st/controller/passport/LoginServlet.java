@@ -1,6 +1,6 @@
 package com.yu.st.controller.passport;
 
-import com.yu.st.controller.Message;
+import com.yu.st.entity.Message;
 import com.yu.st.entity.User;
 import com.yu.st.service.impl.UserService;
 import com.yu.st.util.MD5;

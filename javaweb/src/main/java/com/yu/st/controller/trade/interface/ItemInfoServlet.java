@@ -1,14 +1,12 @@
 package com.yu.st.controller.trade;
 
-import com.yu.st.controller.Message;
+import com.yu.st.entity.Message;
 import com.yu.st.dao.impl.itemInfo;
 import com.yu.st.entity.Category;
 import com.yu.st.entity.Conditions;
 import com.yu.st.entity.Item;
 import com.yu.st.entity.State;
-import com.yu.st.service.impl.ItemService;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

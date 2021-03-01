@@ -45,18 +45,16 @@ function querypage(currpage){
 
 
 function gethtmlitem(item){
-return  '    <a href="detail?id='+item.id+'" class="goodsitem">\n' +
-        '        <div class="goods">\n' +
-        '            <div class="item">\n' +
-        '                <div class="user">\n' +
-        '                    <img src="'+upload+'/'+item.user.avatar+'" alt="头像" class="touxiang">\n' +
-        '                    <p style="line-height: 40px;">'+item.user.username+'</p>\n' +
-        '                </div>\n' +
-        '                <img src="'+upload+'/'+item.pic1+'" alt="商品" class="goodstu">\n' +
-        '                <p style="font-size: 20px; color: red;">￥'+item.price+'</p>\n' +
-        '                <p class="info">'+item.name+'</p>\n' +
-        '            </div>\n' +
-        '        </div>\n' +
-        '    </a>';
+return  `
+<a href="detail?id=${item.id}" class="goodsitem">
+    <div class="goods">
+        <div class="item">
+            <div class="user"> <img src="${upload}/${item.user.avatar}" alt="头像" class="touxiang"> <p
+                    style="line-height: 40px;">${item.user.username}</p></div>
+            <img src="${upload}/${item.pic1}" alt="商品" class="goodstu"> <p style="font-size: 20px; color: red;">
+            ￥${item.price}</p>
+            <p class="info">${item.name}</p></div>
+    </div>
+</a>`
 
 }

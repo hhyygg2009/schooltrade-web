@@ -1,4 +1,4 @@
-package com.yu.st.controller;
+package com.yu.st.entity;
 
 import com.alibaba.fastjson.JSON;
 import lombok.Data;

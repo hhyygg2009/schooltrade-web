@@ -23,14 +23,14 @@
 </head>
 
 
-
 <body layadmin-themealias="default" class="layui-layout-body">
 <div class="layui-layout ">
     <%@ include file="/public/header.jsp" %>
     <div class="layui-main" style="">
-        <div class="search layui-row">
+        <div class="searchbar">
             <form method="get" action="<%=request.getContextPath() %>/trade/search.jsp">
-                <input type="text" name="key" id="search" value="" placeholder="搜   索" autocomplete="off" style="width: 600px;height:40px;border: solid 2px orangered;"/>
+            <img id="logo" src="<%=request.getContextPath()%>/static/img/logo.png" alt="">
+                <input type="text" name="key" id="search" value="" placeholder="搜   索" autocomplete="off"/>
                 <input type="submit" id="searchbtn" value="搜         索" class="searchbtn"/>
             </form>
         </div>
@@ -44,7 +44,7 @@
 <script>
     var keyword="<%=request.getParameter("key")%>"
 </script>
-<script src="search.js"></script>
+<script src="<%=request.getContextPath()%>/static/js/trade/search.js"></script>
 
 </html>
 

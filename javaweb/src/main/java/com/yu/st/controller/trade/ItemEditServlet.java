@@ -1,6 +1,6 @@
 package com.yu.st.controller.trade;
 
-import com.yu.st.controller.Message;
+import com.yu.st.entity.Message;
 import com.yu.st.dao.impl.itemInfo;
 import com.yu.st.entity.Category;
 import com.yu.st.entity.Conditions;

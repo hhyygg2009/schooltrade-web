@@ -95,7 +95,7 @@
         </script>
 
 
-        <script src="my.js">
+        <script src="<%=request.getContextPath()%>/static/js/trade/my.js">
 
         </script>
 

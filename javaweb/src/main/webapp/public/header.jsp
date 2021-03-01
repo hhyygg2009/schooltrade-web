@@ -28,13 +28,16 @@
     .layui-header {
         margin-bottom: 30px;
     }
+    .logo{
+        height: 60px;
+    }
 </style>
 
 
 
 <div class="layui-header layui-bg-red" >
-    <!--        <li class="layui-nav-img"><img src="/static/img/logo.png" alt=""></li>-->
     <ul class="layui-nav layui-layout-left  layui-bg-red" lay-filter="">
+        <img class="logo" src="<%=request.getContextPath()%>/static/img/logo.png" alt="">
         <li class="layui-nav-item layui-this"><a href="<%=request.getContextPath() %>/trade/search.jsp">首页</a></li>
         <!--        <li class="layui-nav-item"><a href="{:url('Trade/search')}">手机二手</a></li>-->
         <!--        <li class="layui-nav-item"><a href="">书籍二手</a></li>-->
@@ -54,7 +57,7 @@
             <a href="<%=request.getContextPath() %>/passport/myprofile">我的账户<span class="layui-badge-dot"></span></a>
         </li>
         <li class="layui-nav-item">
-            <a href=""><img src="<%=request.getContextPath()%>/uploads/up/touxiang_default.jpg" class="layui-nav-img">我</a>
+            <a href=""><img src="<%=request.getContextPath()%>/uploads/default.png" class="layui-nav-img">我</a>
             <dl class="layui-nav-child">
                 <dd><a href="<%=request.getContextPath() %>/passport/myprofile">修改个人信息</a></dd>
 <%--                <dd><a href="">安全管理</a></dd>--%>

@@ -2,7 +2,7 @@ package com.yu.st.controller.passport;
 
 import com.alibaba.fastjson.JSON;
 import com.yu.st.dao.impl.UserDao;
-import com.yu.st.controller.Message;
+import com.yu.st.entity.Message;
 import com.yu.st.entity.User;
 
 import javax.servlet.ServletException;

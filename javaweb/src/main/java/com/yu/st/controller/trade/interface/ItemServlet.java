@@ -1,7 +1,7 @@
 package com.yu.st.controller.trade;
 
 import com.alibaba.fastjson.JSON;
-import com.yu.st.controller.Message;
+import com.yu.st.entity.Message;
 import com.yu.st.dao.impl.ItemDao;
 import com.yu.st.entity.Item;
 import com.yu.st.service.impl.ItemService;

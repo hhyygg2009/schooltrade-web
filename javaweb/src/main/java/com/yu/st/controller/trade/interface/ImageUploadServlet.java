@@ -1,6 +1,6 @@
 package com.yu.st.controller.trade;
 
-import com.yu.st.controller.Message;
+import com.yu.st.entity.Message;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;

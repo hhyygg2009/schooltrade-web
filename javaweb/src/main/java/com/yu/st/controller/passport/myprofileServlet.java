@@ -1,6 +1,5 @@
 package com.yu.st.controller.trade;
 
-import com.yu.st.controller.Message;
 import com.yu.st.dao.impl.UserDao;
 import com.yu.st.entity.User;
 
