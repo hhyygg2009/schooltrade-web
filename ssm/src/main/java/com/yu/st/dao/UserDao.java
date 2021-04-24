@@ -1,7 +1,9 @@
 package com.yu.st.dao;
 
 import com.yu.st.entity.User;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UserDao {
     int deleteByPrimaryKey(Integer id);
 
@@ -11,7 +13,11 @@ public interface UserDao {
 
     User selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(User record);
+    User getUser(Integer id);
+
+    User selectByUsername(String username);
+
+    int addUser(User record);
 
     int updateByPrimaryKey(User record);
 }

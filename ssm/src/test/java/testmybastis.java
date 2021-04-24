@@ -1,11 +1,9 @@
-
 import com.yu.st.dao.UserDao;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
-
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,8 +22,8 @@ public class testmybastis {
         SqlSessionFactory sqlSessionFactory = getSqlSessionFactory();
         SqlSession sqlSession = sqlSessionFactory.openSession();
 
-        UserDao userDao=sqlSession.getMapper(UserDao.class);
-        System.out.println(userDao.selectByPrimaryKey(1).toString());
+        UserDao IUserDao = sqlSession.getMapper(UserDao.class);
+        System.out.println(IUserDao.selectByPrimaryKey(1).toString());
 
 
         sqlSession.close();
