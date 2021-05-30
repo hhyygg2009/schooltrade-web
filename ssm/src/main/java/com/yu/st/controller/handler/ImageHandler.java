@@ -28,9 +28,7 @@ public class ImageHandler {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
         String date = dateFormat.format(new Date());
-//        File uploadDir = new File("./uploads/" + date);
         File uploadDir = new File(session.getServletContext().getRealPath("./uploads/") + date);
-//        System.out.println(uploadDir.getAbsolutePath());
 
         try {
             if (!uploadDir.exists()) {

@@ -12,10 +12,6 @@ import java.util.Map;
 /**
  * @author :hhyygg2009
  * @date :Created in 2020/12/20 22:22
- * @package :com.yu.st.controller
- * @description:
- * @modified By：
- * @version:
  */
 @Data
 @NoArgsConstructor
@@ -38,7 +34,7 @@ public class Message {
 
     public void addData(String name, Object object) {
         if (data == null) {
-            data = new HashMap<>();
+            data = new HashMap<>(16);
         }
         this.data.put(name, object);
     }
@@ -49,6 +45,7 @@ public class Message {
     }
 
 
+    @Override
     public String toString() {
         return JSON.toJSONString(this);
     }

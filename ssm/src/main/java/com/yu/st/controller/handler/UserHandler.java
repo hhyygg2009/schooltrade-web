@@ -1,5 +1,6 @@
 package com.yu.st.controller.handler;
 
+import com.yu.st.bean.User;
 import com.yu.st.bean.po.UserForm;
 import com.yu.st.bean.vo.Message;
 import com.yu.st.dao.UserDao;
@@ -17,7 +18,6 @@ import javax.servlet.http.HttpSession;
 @RestController
 @RequestMapping("/api/user")
 public class UserHandler {
-    UserDao userDao;
     UserService userService;
 
 
@@ -29,5 +29,10 @@ public class UserHandler {
     @PostMapping("/login")
     public Message loginAction(UserForm userForm, HttpSession session) {
         return userService.loginAction(userForm,session);
+    }
+
+    @PostMapping("/update")
+    public Message updateAction(@RequestBody User user,HttpSession session){
+        return userService.updateAction(user, session);
     }
 }

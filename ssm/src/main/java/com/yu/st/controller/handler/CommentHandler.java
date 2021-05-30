@@ -49,7 +49,7 @@ public class CommentHandler {
 
     @PostMapping("/del")
     public Message delComment(Integer commentId, Message message, HttpSession session) {
-        User user = (User) session.getAttribute("user");
+        User user = UserService.getLoginUser(session);
 
         Comment comment = commentDao.selectByPrimaryKey(commentId);
         if (comment.getUserId().equals(user.getId())) {
