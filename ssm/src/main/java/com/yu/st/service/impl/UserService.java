@@ -55,16 +55,15 @@ public class UserService {
         }else{
             status = UserService.CAPTCHA_ERR;
         }
-        return new Message(status, UserService.MSG[status]);
+        return Message.build(status, UserService.MSG[status], null);
     }
 
     public Message updateAction(User user,HttpSession session){
-        Message message=new Message();
         if(checkUser(user,session)){
             userDao.updateByPrimaryKeySelective(user);
-            message.setnoerror();
+            return Message.success();
         }
-        return message;
+        return Message.error();
     }
 
 

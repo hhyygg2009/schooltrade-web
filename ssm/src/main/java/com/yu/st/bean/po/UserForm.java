@@ -2,7 +2,6 @@ package com.yu.st.bean.po;
 
 import com.yu.st.bean.User;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 /**
  * @author hhyygg2009
