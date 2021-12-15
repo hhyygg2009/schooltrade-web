@@ -3,7 +3,7 @@ package com.yu.st.controller.handler;
 import com.yu.st.bean.User;
 import com.yu.st.bean.po.UserForm;
 import com.yu.st.bean.vo.Message;
-import com.yu.st.service.impl.UserService;
+import com.yu.st.service.impl.UserServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +20,7 @@ import javax.servlet.http.HttpSession;
 @RestController
 @RequestMapping("/api/user")
 public class UserHandler {
-    UserService userService;
+    UserServiceImpl userService;
 
 
     @PostMapping(value = "/register")
@@ -31,11 +31,11 @@ public class UserHandler {
 
     @PostMapping("/login")
     public Message loginAction(UserForm userForm, HttpSession session) {
-        return userService.loginAction(userForm,session);
+        return userService.loginAction(userForm, session);
     }
 
     @PostMapping("/update")
-    public Message updateAction(@RequestBody User user,HttpSession session){
+    public Message updateAction(@RequestBody User user, HttpSession session) {
         return userService.updateAction(user, session);
     }
 }

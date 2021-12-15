@@ -12,7 +12,6 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpSession;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,10 +29,10 @@ public class ImageHandler {
     private final GridFsOperations gridFsOperations;
 
     @PostMapping("/upload")
-    public Message imageUpload(@RequestParam(value = "image") MultipartFile file, HttpSession session) {
+    public Message imageUpload(MultipartFile file) {
         try {
             ObjectId id = gridFsOperations.store(file.getInputStream(), file.getOriginalFilename());
-            return Message.success().addData("picaddr", id.toString());
+            return Message.success().addData("src", id.toString());
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -41,24 +40,39 @@ public class ImageHandler {
         return Message.error();
     }
 
-    @GetMapping(value = "/get/{id}", produces = {MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE})
-    public byte[] image(@PathVariable String id) {
-        GridFSFile gridFSFile = gridFsOperations.findOne(new Query().addCriteria(Criteria.where("_id").is(id)));
-        GridFsResource resource = gridFsOperations.getResource(gridFSFile);
+    @PostMapping("/editorUpload")
+    public Message upload(MultipartFile file) {
         try {
-            InputStream inputStream = resource.getInputStream();
-            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(inputStream.available());
-            byte[] buff = new byte[100];
-            int rc = 0;
-            while ((rc = inputStream.read(buff, 0, 100)) > 0) {
-                byteArrayOutputStream.write(buff, 0, rc);
-            }
-
-            return byteArrayOutputStream.toByteArray();
+            ObjectId id = gridFsOperations.store(file.getInputStream(), file.getOriginalFilename());
+            return Message.success().addData("src", "/api/image/" + id.toString());
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return Message.error();
+    }
+
+    @GetMapping(value = "/{id}", produces = {MediaType.IMAGE_JPEG_VALUE, MediaType.IMAGE_PNG_VALUE})
+    public byte[] image(@PathVariable String id) {
+        GridFSFile gridFSFile = gridFsOperations.findOne(new Query().addCriteria(Criteria.where("_id").is(id)));
+        if (gridFSFile != null) {
+            GridFsResource resource = gridFsOperations.getResource(gridFSFile);
+            try {
+                InputStream inputStream = resource.getInputStream();
+                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(inputStream.available());
+                byte[] buff = new byte[100];
+                int rc = 0;
+                while ((rc = inputStream.read(buff, 0, 100)) > 0) {
+                    byteArrayOutputStream.write(buff, 0, rc);
+                }
+
+                return byteArrayOutputStream.toByteArray();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
 
         return null;
 

@@ -1,0 +1,148 @@
+/*商品介绍*/
+
+
+/*轮播图*/
+#carousel img {
+    width: 100%;
+    height: 100%;
+}
+
+/*商品信息*/
+.item .iteminfo .layui-row {
+    margin-bottom: 26px;
+}
+
+.iteminfo {
+    padding: 20px;
+}
+
+/*图片展示*/
+.imgbox {
+    /*float: left;*/
+}
+
+.imgbox img {
+    float: left;
+    width: 300px;
+    margin: 10px;
+
+}
+
+/*图片展示结束*/
+
+/*商品-用户信息*/
+.user {
+    background: #f8f8f8;
+    height: 100%;
+    width: 100%;
+}
+
+.user .user-img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 20% auto;
+    border-radius: 50%;
+}
+
+.user .user-name {
+    text-align: center;
+}
+
+
+.user .user-trade .title {
+    font-weight: bold;
+}
+
+.user .user-trade .detail {
+    float: right;
+    color: red;
+}
+
+.user .user-infocard .broder {
+    border-right: 2px gray solid;
+}
+
+.user-selling {
+    display: inline-block;
+    width: 30%;
+}
+
+.user .user-infocard .user-selling-num {
+
+}
+
+/*商品-用户信息结束*/
+
+/*商品信息*/
+.iteminfo-contact {
+    display: inline-block;
+    width: 72px;
+    height: 24px;
+    padding: 16px 44px;
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+}
+
+.iteminfo-buy {
+    display: inline-block;
+    width: 72px;
+    height: 24px;
+    padding: 16px 44px;
+    border: 1px solid red;
+    border-radius: 5px;
+
+    color: red;
+}
+
+.info-tips {
+    display: inline-block;
+    color: #ffa559;
+    padding: 4px 8px;
+    border: 1px solid #ffa559;
+    border-radius: 3px;
+    margin-right: 28px;
+}
+
+/*商品详细介绍*/
+.shop-detail {
+}
+
+.shop-detail .user-img {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.shop-detail .user-name {
+    display: inline-block;
+}
+
+.shop-detail .item-info {
+    font-size: 16px;
+    padding: 34px 16px;
+    background: #f8f8f8;
+    border: 1px solid #eeeeee;
+    border-radius: 3px;
+    margin-top: 16px;
+    position: relative;
+}
+
+/*留言*/
+.avatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.replybroad {
+    margin-left: 32px;
+    padding-left: 10px;
+    border-left: 2px solid #f5f6f7;
+
+}
+
+/*商品详细介绍结束*/

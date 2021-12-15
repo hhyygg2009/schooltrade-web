@@ -8,6 +8,6 @@ import lombok.Data;
  * @date Created in 2021/5/27 22:06
  */
 @Data
-public class UserForm extends User{
+public class UserForm extends User {
     private String captcha;
 }

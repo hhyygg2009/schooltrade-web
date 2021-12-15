@@ -1,7 +1,7 @@
 package com.yu.st.interceptor;
 
 import com.yu.st.bean.User;
-import com.yu.st.service.impl.UserService;
+import com.yu.st.service.UserService;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
@@ -30,13 +30,13 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     public boolean checkAuth(String uri, User user) {
         String[] stopList = {"passport/profile", "my", "newitem"};
-        String[] allowList = {"static","passport/login"};
+        String[] allowList = {"static", "passport/login"};
         if (user != null) {
             System.out.println(user);
             return true;
         }
-        for(String allow:allowList){
-            if(uri.indexOf(allow)>0){
+        for (String allow : allowList) {
+            if (uri.indexOf(allow) > 0) {
                 return true;
             }
         }

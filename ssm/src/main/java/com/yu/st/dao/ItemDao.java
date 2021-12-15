@@ -17,7 +17,8 @@ public interface ItemDao {
     int insertSelective(Item record);
 
     Item selectByPrimaryKey(Integer id);
-    Item selectUserOwnItem(@Param("id") Integer id,@Param("userid")Integer userid);
+
+    Item selectUserOwnItem(@Param("id") Integer id, @Param("userid") Integer userid);
 
     List<Item> getAllItem(@Param("start") Integer start, @Param("limit") Integer limit);
 
@@ -28,6 +29,7 @@ public interface ItemDao {
     Integer selectByKeywordcount(@Param("keyword") String keyword);
 
     List<Item> selectByUserId(@Param("id") Integer id, @Param("start") Integer start, @Param("limit") Integer limit);
+
     Integer selectByUserIdcount(@Param("id") Integer id);
 
     int updateItem(Item record);

@@ -3,7 +3,7 @@ package com.yu.st.controller.handler;
 import com.yu.st.bean.Reply;
 import com.yu.st.bean.vo.Message;
 import com.yu.st.dao.ReplyDao;
-import com.yu.st.service.impl.ReplyService;
+import com.yu.st.service.impl.ReplyServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,7 +23,7 @@ import java.util.List;
 public class ReplyHandler {
 
     ReplyDao replyDao;
-    ReplyService replyService;
+    ReplyServiceImpl replyService;
 
 
     @PostMapping("/get/{commentId}")

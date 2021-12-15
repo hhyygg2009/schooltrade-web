@@ -13,11 +13,10 @@ import com.yu.st.dao.CategoryDao;
 import com.yu.st.dao.ConditionsDao;
 import com.yu.st.dao.ItemDao;
 import com.yu.st.dao.UserDao;
-import com.yu.st.service.impl.ItemService;
-import com.yu.st.service.impl.UserService;
+import com.yu.st.service.UserService;
+import com.yu.st.service.impl.ItemServiceImpl;
 import lombok.AllArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -69,7 +68,7 @@ public class ItemsHandler {
     }
 
     @RequestMapping("/history/gets")
-    public Message itemsHistory(HttpSession session, Paged paged, ItemService itemService) {
+    public Message itemsHistory(HttpSession session, Paged paged, ItemServiceImpl itemService) {
         HashSet<Integer> itemHistorySet = itemService.itemSessionInit(session);
 
         //分页
@@ -89,7 +88,7 @@ public class ItemsHandler {
 
     }
 
-    @Cacheable(cacheNames = "ItemGetByUser", key = "#userid+'-'+#paged.pageNum+'-'+#paged.pageSize+'-'+#paged.pageSizeLimit")
+    //    @Cacheable(cacheNames = "ItemGetByUser", key = "#userid+'-'+#paged.pageNum+'-'+#paged.pageSize+'-'+#paged.pageSizeLimit")
     @RequestMapping(value = {"/user/{userid}/gets", "/user/gets"})
     public Message getByUser(HttpSession session, @PathVariable(required = false) Integer userid, Paged paged) {
         User user = UserService.getLoginUser(session);

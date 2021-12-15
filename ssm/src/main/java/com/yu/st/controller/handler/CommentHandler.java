@@ -4,7 +4,7 @@ import com.yu.st.bean.Comment;
 import com.yu.st.bean.vo.Message;
 import com.yu.st.dao.CommentDao;
 import com.yu.st.dao.ItemDao;
-import com.yu.st.service.impl.CommentService;
+import com.yu.st.service.impl.CommentServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,7 +24,7 @@ import java.util.List;
 public class CommentHandler {
     CommentDao commentDao;
     ItemDao itemDao;
-    CommentService commentService;
+    CommentServiceImpl commentService;
 
     @PostMapping("/create")
     public Message createComment(Comment comment, HttpSession session) {

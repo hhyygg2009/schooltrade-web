@@ -21,4 +21,14 @@ public class InterceptorConfig implements WebMvcConfigurer {
         registry.addInterceptor(loginInterceptor);
     }
 
+//    @Value(("${file.upload.path}"))
+//    String path="/static";
+
+//    @Override
+//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+//        registry.addResourceHandler("/**")
+//                .addResourceLocations("classpath:/static/")
+////                .addResourceLocations("file:" + Paths.get(path).toAbsolutePath() + File.separator)
+//                .setCacheControl(CacheControl.maxAge(30, TimeUnit.MINUTES));
+//    }
 }

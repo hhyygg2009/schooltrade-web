@@ -6,8 +6,8 @@ import com.yu.st.dao.CategoryDao;
 import com.yu.st.dao.ConditionsDao;
 import com.yu.st.dao.ItemDao;
 import com.yu.st.dao.UserDao;
-import com.yu.st.service.impl.ItemService;
-import com.yu.st.service.impl.UserService;
+import com.yu.st.service.UserService;
+import com.yu.st.service.impl.ItemServiceImpl;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -28,7 +28,7 @@ public class TradeController {
     private final ConditionsDao conditionsDao;
     private final CategoryDao categoryDao;
     private final UserDao userDao;
-    private final ItemService itemService;
+    private final ItemServiceImpl itemService;
 
     @RequestMapping("/search")
     public String search(Model model, @RequestParam(required = false) String key) {
@@ -43,11 +43,12 @@ public class TradeController {
 
     @RequestMapping("/detail/{id}")
     public String detail(@PathVariable Integer id, Model model, HttpSession session) {
-        if(!itemService.saveItemHistory(id, session)){
+        if (!itemService.saveItemHistory(id, session)) {
             log.error("物品记录保存失败");
         }
         Item item = itemDao.selectByPrimaryKey(id);
         model.addAttribute("item", item);
+        model.addAttribute("id", id);
         return "/trade/detail";
     }
 

@@ -26,13 +26,10 @@ spring:
     password: root
   mvc:
     view:
-      prefix: /WEB-INF/jsp/
+      prefix: /jsp/
       suffix: .jsp
   redis:
     password: root
   data:
     mongodb:
       uri: mongodb://localhost:27017/schooltrade
-jasypt:
-  encryptor:
-    password: root

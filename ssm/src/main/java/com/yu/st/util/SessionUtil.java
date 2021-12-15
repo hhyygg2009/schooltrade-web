@@ -9,8 +9,8 @@ import javax.servlet.http.HttpSession;
 public class SessionUtil {
 
     @SuppressWarnings("unchecked")
-    public static  <T> T getAttribute(HttpSession session, String attribute){
-        return (T)session.getAttribute(attribute);
+    public static <T> T getAttribute(HttpSession session, String attribute) {
+        return (T) session.getAttribute(attribute);
     }
 
 }
