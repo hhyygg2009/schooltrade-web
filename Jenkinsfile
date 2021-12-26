@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('cd') {
       steps {
-        dir(path: 'ssm')
+        dir(path: './ssm')
       }
     }
 
