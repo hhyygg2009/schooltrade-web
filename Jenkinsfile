@@ -6,15 +6,10 @@ pipeline {
 
   }
   stages {
-    stage('cd') {
-      steps {
-        dir(path: './ssm')
-      }
-    }
-
     stage('build') {
       steps {
-        sh 'mvn -B -DskipTests clean package'
+        sh '''cd ./ssm
+mvn -B -DskipTests clean package'''
       }
     }
 
